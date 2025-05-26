@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Employee Management</h1>
+    <a href="/employees/new" class="btn btn-add">Add New Employee</a>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Department</th>
+          <th>Salary</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% employees.forEach(employee => { %>
+          <tr>
+            <td><%= employee.name %></td>
+            <td><%= employee.position %></td>
+            <td><%= employee.department %></td>
+            <td>$<%= employee.salary %></td>
+            <td>
+              <a href="/employees/<%= employee._id %>/edit" class="btn btn-edit">Edit</a>
+              <form action="/employees/<%= employee._id %>?_method=DELETE" method="POST" style="display:inline;">
+                <button type="submit" class="btn btn-delete">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

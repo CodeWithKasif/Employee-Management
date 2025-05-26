@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Employee</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Add New Employee</h1>
+    <form action="/employees" method="POST">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="employee[name]" required>
+      </div>
+      <div class="form-group">
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="employee[position]" required>
+      </div>
+      <div class="form-group">
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="employee[department]" required>
+      </div>
+      <div class="form-group">
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" name="employee[salary]" required>
+      </div>
+      <button type="submit" class="btn btn-add">Add Employee</button>
+      <a href="/" class="btn btn-cancel">Cancel</a>
+    </form>
+  </div>
+</body>
+</html>
